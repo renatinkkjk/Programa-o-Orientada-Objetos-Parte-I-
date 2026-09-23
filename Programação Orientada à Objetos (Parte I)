@@ -1,0 +1,78 @@
+1 CLASSE E OBJETO        
+class Pessoa {
+  nome: string;
+  idade: number;
+
+  constructor(nome: string, idade: number) {
+    this.nome = nome;
+    this.idade = idade;
+  }
+}
+
+const pessoa1 = new Pessoa("João", 17);
+console.log(pessoa1.nome, pessoa1.idade);
+
+
+
+
+                 2 Construtor
+class Produto {
+  constructor(
+    public nome: string,
+    public preco: number,
+    public estoque: number
+  ) {}
+}
+
+const p1 = new Produto("X-Cowboy", 25, 10);
+const p2 = new Produto("Coca", 6, 50);
+
+console.log(p1);
+console.log(p2);
+
+
+
+                  3 Métodos
+class Aluno {
+  constructor(public nome: string, public nota: number) {}
+
+  aprovado(): boolean {
+    return this.nota >= 6;
+  }
+}
+
+const aluno1 = new Aluno("Ana", 7.5);
+console.log(aluno1.aprovado());
+                                 4 this / self
+class Retangulo {
+  constructor(public largura: number, public altura: number) {}
+
+  calcularPerimetro(): number {
+    return 2 * (this.largura + this.altura);
+  }
+}
+
+const ret = new Retangulo(10, 5);
+console.log(ret.calcularPerimetro());                
+                               
+
+               5 Modificadores de acesso
+class ContaBancaria {
+  private saldo: number;
+
+  constructor(saldoInicial: number) {
+    this.saldo = saldoInicial;
+  }
+
+  depositar(valor: number): void {
+    this.saldo += valor;
+  }
+
+  consultarSaldo(): number {
+    return this.saldo;
+  }
+}
+
+const conta = new ContaBancaria(100);
+conta.depositar(50);
+console.log(conta.consultarSaldo()); 
